@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>学生管理操作-Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<script>
+    function del(stu_num) {
+        var i = confirm("确认删除吗？")
+        if (i == true) {
+            location.href = "http://127.0.0.1:8000/delete/?delete_num=" + stu_num;
+        }
+    }
+</script>
+
+
+<h2 style="text-align: center">学生信息表</h2>
+<div class="row">
+<div class="table-responsive padding-sm col-md-10 col-md-offset-1">
+  <table class="table table-striped table-bordered table-hover">
+    <caption>查看学生信息</caption>
+    <a href="http://127.0.0.1:8000/insert">添加学生</a>
+    <thead>
+      <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>语文成绩</th>
+        <th>数学成绩</th>
+        <th>英语成绩</th>
+        <th>物理成绩</th>
+        <th>化学成绩</th>
+        <th>总成绩</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for student in student_list %}
+<tr>
+<td>{{ student.num }}</td>
+<td>{{ student.name }}</td>
+<td>{{ student.chinese }}</td>
+<td>{{ student.math }}</td>
+<td>{{ student.english }}</td>
+<td>{{ student.physics }}</td>
+<td>{{ student.chemistry }}</td>
+<td>{{ student.allscore }}</td>
+<td><a href="http://127.0.0.1:8000/update/?update_num={{ student.num }}">修改</a>|
+    <a href="javascript:del({{ student.num }})">删除</a></td>
+</tr>
+{% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>

@@ -1,0 +1,17 @@
+<html> <head> <title>添加学生</title> </head>
+<a href="http://127.0.0.1:8000/list">学生管理操作</a>
+<form method="post">
+<table border=1 align="center">
+<tr> <th>学号</th><th>姓名</th><th>语文成绩</th><th>数学成绩</th><th>英语成绩</th><th>物理成绩</th><th>化学成绩</th><th>操作</th> </tr> <tr>
+    <td><input name="num" type="text"></td>
+    <td><input name="name" type="text"></td>
+    <td><input name="chinese" type="number" min="0" max="150"></td>
+    <td><input name="math" type="number" min="0" max="150"></td>
+    <td><input name="english" type="number" min="0" max="150"></td>
+    <td><input name="physics" type="number" min="0" max="100"></td>
+    <td><input name="chemistry" type="number" min="0" max="100"></td>
+    <td><input type="submit" value="保存"> <input type="reset" value="重填"></td>
+</tr>
+</table>
+</form>
+</html>

@@ -1,0 +1,30 @@
+<html><head><title>学生管理操作</title></head>
+<script>
+    function del(stu_num) {
+        var i = confirm("确认删除吗？")
+        if (i == true) {
+            location.href = "http://127.0.0.1:8000/delete/?delete_num=" + stu_num;
+        }
+    }
+</script>
+<a href="http://127.0.0.1:8000/insert">添加学生</a>
+<h2 style="text-align: center">学生信息表</h2>
+<table border=1 align="center">
+<tr> <th>学号</th><th>姓名</th><th>语文成绩</th><th>数学成绩</th><th>英语成绩</th><th>物理成绩</th><th>化学成绩</th><th>总成绩</th>
+    <th>操作</th></tr>
+{% for student in student_list %}
+<tr>
+<td>{{ student.num }}</td>
+<td>{{ student.name }}</td>
+<td>{{ student.chinese }}</td>
+<td>{{ student.math }}</td>
+<td>{{ student.english }}</td>
+<td>{{ student.physics }}</td>
+<td>{{ student.chemistry }}</td>
+<td>{{ student.allscore }}</td>
+<td><a href="http://127.0.0.1:8000/update/?update_num={{ student.num }}">修改</a>|
+    <a href="javascript:del({{ student.num }})">删除</a></td>
+</tr>
+{% endfor %}
+</table>
+</html>
