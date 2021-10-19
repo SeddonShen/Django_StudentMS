@@ -25,10 +25,10 @@ For more information, you can visit https://blog.csdn.net/qq_45853731/article/de
 
 ## Todolist
 
-- add Boostrap UI lib and make compare with simple HTML.
-- change sqlite to mysql
-- JSON add for GET and POST
-- rebuilt it and learn more
+- add Boostrap UI lib and make compare with simple HTML. OK
+- change sqlite to mysql OK
+- JSON add for GET and POST OK
+- rebuilt it and learn more OK
 - make a PPT
 
 ## Mysql Can use to test
