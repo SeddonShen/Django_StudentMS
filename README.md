@@ -23,14 +23,6 @@ I use some code from the csdn blog below,and make it more simple and add Bootstr
 
 For more information, you can visit https://blog.csdn.net/qq_45853731/article/details/107882140
 
-## Todolist
-
-- add Boostrap UI lib and make compare with simple HTML. OK
-- change sqlite to mysql OK
-- JSON add for GET and POST OK
-- rebuilt it and learn more OK
-- make a PPT
-
 ## Mysql Can use to test
 
 First to setting mysql
